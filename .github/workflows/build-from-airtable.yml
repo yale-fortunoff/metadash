@@ -75,7 +75,7 @@ jobs:
           issue-number: ${{ needs.report.outputs.ISSUE }}
           # concat with deploy oputput: needs.build-and-deploy.outputs.BUILD_OUTPUT
           body: "## Deployed \n
-                You can check it at 👉 https://yale-fortunoff.github.io/metadash-staging/"
+                You can check it at 👉 https://yale-fortunoff.github.io/metadash/"
           # close the issue
     permissions:
       issues: write
