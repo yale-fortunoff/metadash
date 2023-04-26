@@ -17,7 +17,7 @@ export default class extends React.Component {
                 </div>                
             )
         } else {
-            let htext = this.props.hoverText.trim().length > 0 ? this.props.hoverText : this.props.label || " ";
+            let htext = this.props.hoverText?.trim().length > 0 ? this.props.hoverText : this.props.label || " ";
             ret = (
                 <div 
                 className="selected-item"

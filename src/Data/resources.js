@@ -7,7 +7,7 @@ const { getGender } = require("./getGender");
  *       without any parameters
  *         
  */
-const __all = require("./json/index.8.min.json");
+const __all = require("./json/Index.json");
 const all = () => __all;
 
 let filters = {};
@@ -31,6 +31,7 @@ filters.resourceContainsAllPrograms = programs => { return filters.resourceConta
 filters.resourceContainsOnlyPrograms = programs => {
     return r => {
         if (programs.length < 1) { return true; } // don't filter if it's not set
+        if (!r || !r.programs) { return false }
         if (r.programs.length > 1 || r.programs.length < 1) { return false }
         if (r.programs[0] === programs[0].id) { return true }
         return false;
@@ -51,12 +52,12 @@ let filterBirthPlacesFactory = options => {
         let place = options.birthplaces[0];
 
         // these two should always match
-        if ((r.birth_place_cities || []).length !== (r.birth_place_countries || []).length) { return false }
+        if (r.birth_place_cities?.length !== r.birth_place_countries?.length) { return false }
 
         for (let j = 0; j < (r.birth_place_cities || []).length; j++) {
     
-            let city = r.birth_place_cities[j],
-                country = r.birth_place_countries[j];
+            let city = (r.birth_place_cities || [])[j],
+                country = (r.birth_place_countries || [])[j];
             //if (!city || !country ){ return false}
             if (normalizeString(country) !== normalizeString(place.country)) return false;
 

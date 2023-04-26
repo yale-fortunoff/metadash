@@ -1,0 +1,104 @@
+name: Build from Airtable
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          path: main
+        # install dependencies
+      - name: Install dependencies
+        run: | 
+          cd main
+          yarn
+        # Install dependencies end
+      - name: Build Static Site
+        id: build
+        run: |
+          cd main
+          yarn build
+
+      # set git user for deployment
+      - name: set git email
+        run:  |
+          cd main
+          git config user.email "support+actions@github.com"
+      - name: set git user
+        run: |
+          cd main
+          git config user.name "Github Actions Bot"
+
+      - name: Deploy to GitHub Pages
+        uses: Cecilapp/GitHub-Pages-deploy@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          email: support+actions@github.com
+          build_dir: main/build
+
+    env:
+      AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+      CI: false
+      
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: open-issue
+        id: open-issue
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ github.token }}
+          title: New Deployment from Airtable
+          body: New Deployment request was received from Airtable
+        # get issuse number from json 
+        
+    permissions:
+      issues: write
+    outputs:
+      ISSUE: ${{ steps.open-issue.outputs.number }}
+
+  report-build-success:
+    runs-on: ubuntu-latest
+    needs: [build-and-deploy,report]
+    if: (success())
+    steps:
+      - name: comment-actions
+        uses: GrantBirki/comment@v2.0.3
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          issue-number: ${{ needs.report.outputs.ISSUE }}
+          # concat with deploy oputput: needs.build-and-deploy.outputs.BUILD_OUTPUT
+          body: "## Deployed \n
+                You can check it at 👉 https://yale-fortunoff.github.io/metadash-staging/"
+          # close the issue
+    permissions:
+      issues: write
+
+  report-build-failure:
+    runs-on: ubuntu-latest
+    needs: [build-and-deploy,report]
+    if: (failure())
+    steps:
+      - name: comment-actions
+        uses: GrantBirki/comment@v2.0.3
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          issue-number: ${{ needs.report.outputs.ISSUE }}
+          # concat with deploy oputput: needs.build-and-deploy.outputs.BUILD_OUTPUT
+          body: " ## Deployment failed for some reason ⚠️ \n
+                  - Check if actions have have access to write permissions \n
+                  settings -> actions -> permissions -> check write access to issues and pull requests \n
+                  - Check if actions have \\`AIRTABLE_TOKEN\\` secret \n
+                  settings (left column) -> secrets and variables -> actions -> repository secrets \n
+                    "
+          # close the issue
+    permissions:
+      issues: write
+

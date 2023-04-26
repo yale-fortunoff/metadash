@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React from 'react';
 import "./style/main.scss";
 import { Cluster } from "../../Viz";
@@ -132,6 +133,7 @@ export default class extends React.Component {
         // return [{label: value + " and a hot plate!"}]
     }
 
+    // @ts-ignore
     onChange(event, { newValue }) {
         this.setState({
             searchTerm: newValue
@@ -161,6 +163,7 @@ export default class extends React.Component {
         )
     }
 
+    // @ts-ignore
     onSuggestionSelected(e, { suggestion }) {
         this.props.updateSelections([suggestion])
     }

@@ -1,6 +1,6 @@
 const createReferenceInterface = require("./createReferenceInterface");
 
-const data = require("./json/interviewers.7.min.json")
+const data = require("./json/Interviewers.json")
     .map(i => {
 
         if (i.display_names.length > 1){ throw new Error("Interviewer with multiple names")}

@@ -3,7 +3,7 @@
  */
 const createReferenceInterface = require("./createReferenceInterface");
 
-const data = require("./json/subjects.2.min.json")
+const data = require("./json/Subjects.json")
     .map(a => {
         const ret = {
             label: a.title,
