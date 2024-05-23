@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/metadash/static/css/main.4efb2183.chunk.css",
-    "main.js": "/metadash/static/js/main.68dee54c.chunk.js",
-    "main.js.map": "/metadash/static/js/main.68dee54c.chunk.js.map",
-    "runtime~main.js": "/metadash/static/js/runtime~main.2c6ab6d3.js",
-    "runtime~main.js.map": "/metadash/static/js/runtime~main.2c6ab6d3.js.map",
-    "static/js/2.a3e79b9e.chunk.js": "/metadash/static/js/2.a3e79b9e.chunk.js",
-    "static/js/2.a3e79b9e.chunk.js.map": "/metadash/static/js/2.a3e79b9e.chunk.js.map",
+    "main.css": "/metadash/static/css/main.4af2f8ff.css",
+    "main.js": "/metadash/static/js/main.b10e1e9c.js",
+    "static/media/yalenew-roman-webfont.woff": "/metadash/static/media/yalenew-roman-webfont.dc72385855adfe8187c3.woff",
+    "static/media/yalenew-roman-webfont.woff2": "/metadash/static/media/yalenew-roman-webfont.077c9e0f95bf605a4aa8.woff2",
     "index.html": "/metadash/index.html",
-    "precache-manifest.13d45f9f7d105b047a9b9f8efd7afdb5.js": "/metadash/precache-manifest.13d45f9f7d105b047a9b9f8efd7afdb5.js",
-    "service-worker.js": "/metadash/service-worker.js",
-    "static/css/main.4efb2183.chunk.css.map": "/metadash/static/css/main.4efb2183.chunk.css.map",
-    "static/media/main.scss": "/metadash/static/media/yalenew-roman-webfont.f2b260ad.woff2"
-  }
+    "static/media/search-icon.svg": "/metadash/static/media/search-icon.6d9f1e898233f035a54c.svg",
+    "static/media/x-circle-icon.svg": "/metadash/static/media/x-circle-icon.8adc6e0810ab6f4276d0.svg",
+    "static/media/x-tag-icon.svg": "/metadash/static/media/x-tag-icon.e63794d06e74f9bfce75.svg",
+    "static/media/x-field.svg": "/metadash/static/media/x-field.969f699306abc4a0bc88.svg",
+    "static/media/dropdown-arrow.svg": "/metadash/static/media/dropdown-arrow.1e266fb2b54355eb942d.svg",
+    "main.4af2f8ff.css.map": "/metadash/static/css/main.4af2f8ff.css.map",
+    "main.b10e1e9c.js.map": "/metadash/static/js/main.b10e1e9c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4af2f8ff.css",
+    "static/js/main.b10e1e9c.js"
+  ]
 }
