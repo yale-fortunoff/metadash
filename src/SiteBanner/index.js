@@ -37,9 +37,9 @@ const YaleLogoSVG = () => {
 const FortunoffTitleSVG = () => {
   return (
     <svg
-      width="218px"
+      width="238px"
       height="40px"
-      viewBox="0 0 218 40"
+      viewBox="0 0 238 40"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
