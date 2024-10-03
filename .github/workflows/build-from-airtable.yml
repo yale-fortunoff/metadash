@@ -29,14 +29,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Download Airtable data
-        run: node download_airtable.js
-        env:
-          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
-
       - name: Build Static Site
         run: npm run build
         env:
+          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
           CI: true
 
       - name: Deploy to GitHub Pages
