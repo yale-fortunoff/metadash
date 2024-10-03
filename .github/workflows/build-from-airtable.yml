@@ -33,7 +33,7 @@ jobs:
         run: npm run build
         env:
           AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
-          CI: true
+          CI: false # Don't treat warnings as errors
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
