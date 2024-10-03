@@ -9,7 +9,7 @@ it.
 
 Most of this data was based on the FVAHT's database of record, ArchiveSpace, but
 the birth place and birth year information was manually entered in two phases,
-the latter of which was conducted in early 2019. 
+the latter of which was conducted in early 2019.
 
 This project is free and open source, published under the GNU Public License,
 and it can be re-used for any purpose. While it was developed closely around the
@@ -26,8 +26,4 @@ This project is serverless, so all of the data is loaded into the browser. The
 data API is sequestered in the src/Data module, so that at some point it could
 be replaced with a server.
 
-This project is built with React, and the general approach was to abstract
-inputs and visualization types (such as text input and bar graphs) from their
-specific instantiation, so as much of the code is reusable as possible.
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This codebase was updated to run on node.js using typescript and tailwindcss, based on [T3](https://create.t3.gg/)
