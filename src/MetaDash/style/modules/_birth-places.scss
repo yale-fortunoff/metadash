@@ -1,7 +1,7 @@
 .BirthPlaces {
   //justify-content: space-between;
-  display:unset;
-  position:relative;
+  display: unset;
+  position: relative;
   overflow: unset;
 
   // .hover-text {
@@ -13,7 +13,7 @@
 
   svg {
     height: 400px;
-    circle.country{
+    circle.country {
       fill: white;
     }
     circle.city {
@@ -61,16 +61,13 @@
     padding: 0;
     list-style-type: none;
   }
-  
+
   .react-autosuggest__suggestion {
     cursor: pointer;
     padding: 10px 20px;
   }
-  
-  
-  .react-autosuggest__suggestion--highlighted {
-      background-color: white;
 
+  .react-autosuggest__suggestion--highlighted {
+    background-color: white;
   }
-  
 }

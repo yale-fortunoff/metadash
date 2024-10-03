@@ -165,11 +165,11 @@ export default class extends React.Component {
                   .map((k) => this.state.summaryData.recordingYears[k])
                   .filter(
                     (yrs) =>
-                      yrs.label >= RECORDING_MIN && yrs.label <= RECORDING_MAX
+                      yrs.label >= RECORDING_MIN && yrs.label <= RECORDING_MAX,
                   )
                   .map((a) => {
                     return { ...a, barClass: "recording" };
-                  })
+                  }),
               )}
           ></BirthAndRecordingYear>
 

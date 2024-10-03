@@ -1,25 +1,24 @@
-.Interviewers{
-    overflow: hidden;
-    max-height: 100%;
+.Interviewers {
+  overflow: hidden;
+  max-height: 100%;
 
-    padding-left: 0px;
-    padding-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    .input-wrapper{
-        padding: 0 30px 30px 30px;
+  .input-wrapper {
+    padding: 0 30px 30px 30px;
+  }
+
+  .list-item:hover {
+    background-color: $color-lightmist;
+    color: $color-teal;
+  }
+
+  .list-item {
+    .list-item-value {
+      margin-right: 30px;
     }
-
-    .list-item:hover{
-        background-color: $color-lightmist;
-        color: $color-teal;
-    }
-
-    .list-item{
-        .list-item-value{
-            margin-right: 30px;
-        }
-    }
-
+  }
 }

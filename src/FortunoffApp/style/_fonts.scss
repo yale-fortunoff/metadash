@@ -1,12 +1,11 @@
-
-  @import url("https://use.typekit.net/wjj5bcz.css");
+@import url("https://use.typekit.net/wjj5bcz.css");
 
 // @font-face {
 //   font-family: "YaleNew";
 //   font-style: normal;
 //   font-weight: 400;
-//   src: local("Yale"), 
-//   local("YaleNew"), 
+//   src: local("Yale"),
+//   local("YaleNew"),
 //   url(./fonts/YaleNew-Roman.otf) format("otf");
 // }
 
@@ -14,8 +13,8 @@
 //   font-family: "YaleNew";
 //   font-style: bold;
 //   font-weight: 700;
-//   src: local("Yale"), 
-//   local("YaleNew-bold"), 
+//   src: local("Yale"),
+//   local("YaleNew-bold"),
 //   url(./fonts/YaleNew-Bold.otf) format("otf")
 // }
 
@@ -23,7 +22,7 @@
 //   font-family: "Proxima";
 //   font-style: normal;
 //   font-weight: 400;
-//   src: local("Proxima"), 
+//   src: local("Proxima"),
 //       url("./fonts/ProximaNova-Reg.otf") format("otf"),
 //       url("./fonts/ProximaNova-Reg.ttf") format("truetype")
 // }
@@ -32,7 +31,7 @@
 //   font-family: "Proxima";
 //   font-style: normal;
 //   font-weight: 400;
-//   src: local("Proxima"), 
+//   src: local("Proxima"),
 //       url("./fonts/ProximaNova-Sbold.otf") format("otf"),
 //       url("./fonts/ProximaNova-Sbold.ttf") format("truetype")
 // }
@@ -41,7 +40,7 @@
 //   font-family: "Proxima";
 //   font-style: bold;
 //   font-weight: 700;
-//   src: local("Proxima"), 
+//   src: local("Proxima"),
 //       url("./fonts/ProximaNova-Bold.otf") format("otf"),
 //       url("./fonts/ProximaNova-Bold.ttf") format("truetype")
 // }
@@ -71,9 +70,10 @@
 // }
 
 @font-face {
-  font-family: 'yalenewroman';
-  src: url('./fonts/yalenew-roman-webfont.woff2') format('woff2'),
-       url('./fonts/yalenew-roman-webfont.woff') format('woff');
+  font-family: "yalenewroman";
+  src:
+    url("./fonts/yalenew-roman-webfont.woff2") format("woff2"),
+    url("./fonts/yalenew-roman-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -81,7 +81,6 @@
 $font-serif: "yalenewroman";
 // $font-sans: "Proxima";
 $font-sans: proxima-nova, sans-serif, arial;
-
 
 // $font-serif: "Georgia";
 // $font-sans: "Arial";

@@ -1,45 +1,42 @@
 .Gender {
-    @include typography-gender;
+  @include typography-gender;
 
-    .selected {
-        color: $color-robinegg;
+  .selected {
+    color: $color-robinegg;
+  }
+
+  .label-area.off {
+    color: $color-lightgray;
+  }
+
+  .label-area.on {
+    color: $color-yaleblack;
+
+    .subtext {
+      color: $color-textgray;
     }
+  }
 
-    
-    .label-area.off {
-        color: $color-lightgray;
+  .label-area.on:hover {
+    color: $color-robinegg;
+    .subtext {
+      color: $color-robinegg;
     }
+  }
 
-    .label-area.on {
-        color: $color-yaleblack;
+  .label-area.off:hover {
+    color: $color-fortunoff;
+  }
 
-        .subtext {
-            color: $color-textgray;
-        }
-    }
+  .gender-bar.men {
+    background-color: $color-teal;
+  }
 
-    .label-area.on:hover {
-        color: $color-robinegg;
-        .subtext{
-            color: $color-robinegg;
-        }
-    }
+  .gender-bar.both {
+    background-color: $color-marigold;
+  }
 
-    .label-area.off:hover{
-        color: $color-fortunoff;
-    }
-
-    .gender-bar.men {
-        background-color: $color-teal;
-      }
-    
-      .gender-bar.both {
-        background-color: $color-marigold;
-      }
-    
-      .gender-bar.women {
-        background-color: $color-fortunoff;
-      }
-    
-
+  .gender-bar.women {
+    background-color: $color-fortunoff;
+  }
 }

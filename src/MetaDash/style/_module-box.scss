@@ -1,14 +1,11 @@
 @import "./colors";
 @import "./typography";
 
-
 .module-box {
   -ms-overflow-style: -ms-autohiding-scrollbar;
   overflow-x: hidden;
   overflow-y: hidden;
 
-
   display: flex;
   flex-direction: column;
-
 }

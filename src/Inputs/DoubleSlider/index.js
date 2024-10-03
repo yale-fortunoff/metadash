@@ -223,7 +223,7 @@ export default class extends D3Component {
       const yr = xToValue(limitX(d3.event.x));
       d3.select(this).attr(
         "transform",
-        (x) => `translate(${limitX(d3.event.x)},${yCenter - handleHeight / 2})`
+        (x) => `translate(${limitX(d3.event.x)},${yCenter - handleHeight / 2})`,
       );
 
       d3.select(this).attr("data-value", (d.value = yr));
@@ -258,14 +258,14 @@ export default class extends D3Component {
       .attr(
         "transform",
         (x) =>
-          `translate(${this.valueToX(x.value)},${yCenter - handleHeight / 2})`
+          `translate(${this.valueToX(x.value)},${yCenter - handleHeight / 2})`,
       )
       .call(
         d3
           .drag()
           .on("start", dragstarted)
           .on("drag", dragged)
-          .on("end", dragended)
+          .on("end", dragended),
       );
 
     updateTrackHighlight();
@@ -293,7 +293,7 @@ export default class extends D3Component {
 
     d3.select(window).on(
       "resize.doubleslider" + this.props.label,
-      this.redrawChart.bind(this)
+      this.redrawChart.bind(this),
     );
   }
 
@@ -459,7 +459,7 @@ export default class extends D3Component {
       .data(
         arr.map((x) => {
           return { value: x };
-        })
+        }),
       )
       .attr("x", (x) => this.valueToX(x.value))
       .attr(
@@ -467,7 +467,7 @@ export default class extends D3Component {
         (x) =>
           `translate(${this.valueToX(x.value)},${
             this.state.yCenter - this.handleHeight / 2
-          })`
+          })`,
       );
   }
 

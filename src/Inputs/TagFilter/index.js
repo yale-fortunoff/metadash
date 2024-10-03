@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // import GenericInput from "../GenericInput";
 import TextInput from "../TextInput";
 
@@ -6,91 +6,88 @@ import SelectionPool from "../SelectionPool";
 import TagPool from "./TagPool";
 
 export default class extends React.Component {
+  constructor(props) {
+    super(props);
 
-    constructor(props) {
+    this.state = {
+      searchTerm: "",
+    };
 
-        super(props);
+    this.updateSearchTerm = this.updateSearchTerm.bind(this);
+    this.addSelection = this.addSelection.bind(this);
+    this.dropSelectionByID = this.dropSelectionByID.bind(this);
+    this.dropSelection = this.dropSelection.bind(this);
+    this.updateSelections = this.updateSelections.bind(this);
+  }
 
-        this.state = {
-            searchTerm: '',
-        }
+  updateSelections(newSelections) {
+    this.props.updateSelections(newSelections);
+    this.setState({ searchTerm: "" });
+  }
 
-        this.updateSearchTerm = this.updateSearchTerm.bind(this);
-        this.addSelection = this.addSelection.bind(this);
-        this.dropSelectionByID = this.dropSelectionByID.bind(this);
-        this.dropSelection = this.dropSelection.bind(this);
-        this.updateSelections = this.updateSelections.bind(this);
+  updateSearchTerm(t) {
+    this.setState({
+      searchTerm: t,
+    });
+  }
+
+  addSelection(selectionItem) {
+    // don't add a duplicate
+    var newSelections = [...this.props.selections];
+    if (newSelections.filter((a) => a.id === selectionItem.id).length > 0) {
+      return;
     }
 
-    updateSelections(newSelections) {
-        this.props.updateSelections(newSelections);
-        this.setState({ searchTerm: "" })
-    }
+    newSelections = [...newSelections, selectionItem];
 
-    updateSearchTerm(t) {
-        this.setState({
-            searchTerm: t,
-        });
-    }
+    this.updateSelections(newSelections, this.state.searchTerm);
+  }
 
-    addSelection(selectionItem) {
-        // don't add a duplicate
-        var newSelections = [...this.props.selections];
-        if (newSelections.filter(a => a.id === selectionItem.id).length > 0) { return; }
+  dropSelectionByID(dropID) {
+    var newSelections = [...this.props.selections];
+    newSelections = newSelections.filter((a) => {
+      const ret = String(a.id) !== String(dropID);
+      return ret;
+    });
 
-        newSelections = [...newSelections, selectionItem];
+    this.updateSelections(newSelections, this.state.searchTerm);
+  }
 
-        this.updateSelections(newSelections, this.state.searchTerm);
-    }
+  dropSelection(item) {
+    this.dropSelectionByID(item.id);
+  }
 
-    dropSelectionByID(dropID) {
-        var newSelections = [...this.props.selections];
-        newSelections = newSelections.filter(a => {
-            const ret = String(a.id) !== String(dropID);
-            return ret;
-        });
+  render() {
+    // return (null);
 
-        this.updateSelections(newSelections, this.state.searchTerm);
-    }
+    //const items = this.props.getItems(this.props.selections, this.state.searchTerm.split(""))
+    const items = this.props
+      .filterItems(this.state.searchTerm.split(" "))
+      .filter((i) => i.id in this.props.allItems);
 
-    dropSelection(item) {
-        this.dropSelectionByID(item.id)
-    }
+    return (
+      <div className="TagFilter">
+        <div className="top-area">
+          <div className="type-area">
+            <div className="title-area">{this.props.title}</div>
+            <TextInput
+              callback={this.updateSearchTerm}
+              placeholder={this.props.placeholder}
+              value={this.state.searchTerm}
+            ></TextInput>
+          </div>
+          <SelectionPool
+            callback={this.dropSelection}
+            items={this.props.selections}
+          ></SelectionPool>
+        </div>
 
-    render() {
-        // return (null);
-
-        //const items = this.props.getItems(this.props.selections, this.state.searchTerm.split(""))
-        const items = this.props.filterItems(this.state.searchTerm.split(" "))
-            .filter(i => i.id in this.props.allItems)
-
-
-        return (
-            <div className="TagFilter">
-                <div className="top-area">
-
-                    <div className="type-area">
-                        <div className="title-area">{this.props.title}</div>
-                        <TextInput
-                            callback={this.updateSearchTerm}
-                            placeholder={this.props.placeholder}
-                            value={this.state.searchTerm}
-                        ></TextInput>
-
-                    </div>
-                    <SelectionPool
-                        callback={this.dropSelection}
-                        items={this.props.selections}
-                    ></SelectionPool>
-                </div>
-
-                <TagPool
-                    callback={this.addSelection}
-                    items={items || []}
-                // items={this.state.poolItems || []}
-                ></TagPool>
-            </div>
-        )
-    }
-
+        <TagPool
+          callback={this.addSelection}
+          items={items || []}
+          // items={this.state.poolItems || []}
+        ></TagPool>
+      </div>
+    );
+  }
 }

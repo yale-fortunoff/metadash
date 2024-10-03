@@ -1,6 +1,6 @@
 @import "./module-box";
 
-.Section.module-area{
+.Section.module-area {
   margin-top: 30px;
 }
 
@@ -8,9 +8,8 @@
   margin-right: 80px;
   margin-left: 80px;
 
-
   display: grid;
-  
+
   grid-gap: 16px;
 
   grid-template-rows: 20px 180px 90px repeat(6, 80px);
@@ -19,6 +18,7 @@
 
   grid-template-areas:
     // -- 1x20px
+
     "textmenu   textmenu    textmenu    textmenu textmenu"
     // -- 1x180px
     "gender     birthyear   birthyear   birthyear interviewers"
@@ -33,33 +33,33 @@
     //"languages  birthplaces birthplaces  programs  programs"
     "languages  birthplaces birthplaces  programs  programs";
   .text-menu {
-    grid-area: textmenu;//-start / textmenu-start / textmenu-end / textmenu-end;
+    grid-area: textmenu; //-start / textmenu-start / textmenu-end / textmenu-end;
   }
   .tagfilter-collection {
     display: flex;
   }
 
   .Gender {
-    grid-area: gender;//-start / gender-start / gender-end / gender-end;
+    grid-area: gender; //-start / gender-start / gender-end / gender-end;
   }
   .Languages {
-    grid-area: languages;//-start / languages-start / languages-end / languages-end;
+    grid-area: languages; //-start / languages-start / languages-end / languages-end;
   }
 
-  .Interviewers{
+  .Interviewers {
     grid-area: interviewers;
   }
 
   .BirthPlaces {
-    grid-area: birthplaces;//-start / birthplaces-start / birthplaces-end / birthplaces-end;
+    grid-area: birthplaces; //-start / birthplaces-start / birthplaces-end / birthplaces-end;
   }
 
   .BirthYear {
-    grid-area: birthyear;//-start / birthyear-start / birthyear-end / birthyear-end;
+    grid-area: birthyear; //-start / birthyear-start / birthyear-end / birthyear-end;
   }
 
   .Programs {
-    grid-area: programs;//-start / programs-start / programs-end /programs-end;
+    grid-area: programs; //-start / programs-start / programs-end /programs-end;
   }
 }
 
@@ -69,7 +69,7 @@
 
     grid-template-rows: 1em 270px repeat(5, 180px);
     grid-template-columns: repeat(6, fr);
-    grid-template-areas:    
+    grid-template-areas:
       "textmenu     textmenu     textmenu textmenu     textmenu     textmenu"
       "gender    birthyear    birthyear  birthyear    birthyear    birthyear"
       // "birthyear    birthyear"
@@ -82,7 +82,6 @@
       //"languages    languages    interviewers interviewers interviewers interviewersx"
       "languages    languages    interviewers interviewers interviewers interviewers";
   }
-
 }
 
 @media only screen and (min-width: 600px) and (max-width: 899px) {
@@ -91,10 +90,9 @@
     margin-right: 30px;
     margin-left: 30px;
 
-
     grid-template-rows: 1em 300px repeat(10, 180px);
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:    
+    grid-template-areas:
       "textmenu     textmenu"
       "birthyear    birthyear"
       "birthplaces  birthplaces"
@@ -108,9 +106,7 @@
       "languages    interviewers"
       "languages    interviewers";
   }
-  
 }
-
 
 @media only screen and (max-width: 599px) {
   .module-area {
@@ -123,6 +119,7 @@
     // // grid-template-rows: repeat(6,minmax(1fr, 300px));
     // grid-template-columns: minmax(200px, 1fr) repeat(2, 2fr) 300px;
     grid-template-areas:    //"overview  overview  overview  overview"
+
       "textmenu"
       "birthyear"
       "birthplaces"

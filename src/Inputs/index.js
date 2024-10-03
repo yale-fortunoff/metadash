@@ -7,13 +7,13 @@ import ItemSelector from "./ItemSelector";
 import DoubleSlider from "./DoubleSlider";
 import HoverText from "./HoverText";
 
-export { 
-    ChecklistInput, 
-    DoubleSlider,
-    TextInput, 
-    TagFilter, 
-    RangeSlider, 
-    SelectionPool,
-    ItemSelector,
-    HoverText
-}
+export {
+  ChecklistInput,
+  DoubleSlider,
+  TextInput,
+  TagFilter,
+  RangeSlider,
+  SelectionPool,
+  ItemSelector,
+  HoverText,
+};

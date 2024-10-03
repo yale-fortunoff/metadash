@@ -21,7 +21,9 @@
       flex: 4 4;
 
       .pct-bar {
-        transition: background-color 0.25s ease, width 0.15s ease;
+        transition:
+          background-color 0.25s ease,
+          width 0.15s ease;
         background-color: $color-teal;
       }
     }

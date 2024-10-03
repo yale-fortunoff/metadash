@@ -60,7 +60,7 @@ export default class extends React.Component {
                       .filter(
                         (_, i) =>
                           result.birth_place_cities[i] ||
-                          result.birth_place_countries[i]
+                          result.birth_place_countries[i],
                       )
                       .map((city, i) => (
                         <li className="sub-item" key={`bp-${i}`}>
@@ -68,7 +68,7 @@ export default class extends React.Component {
                           {city && result.birth_place_countries[i] ? ", " : ""}
                           {result.birth_place_countries[i]}
                         </li>
-                      ))
+                      )),
                   )
                   .slice(-2) // don't show more than two items
               }

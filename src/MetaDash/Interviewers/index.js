@@ -19,7 +19,7 @@ export default class extends React.Component {
 
   dropSelection(item) {
     this.props.updateSelections(
-      this.props.selections.filter((i) => i.id !== item.id)
+      this.props.selections.filter((i) => i.id !== item.id),
     );
   }
 
@@ -40,7 +40,7 @@ export default class extends React.Component {
     // otherwise, select it
     const selections = this.props.selectionsDict; //arrayToObject(this.props.selections);
     const selectionsWithoutCurrentItem = this.props.selections.filter(
-      (i) => i.id !== item.id
+      (i) => i.id !== item.id,
     );
 
     if (item.id in selections) {

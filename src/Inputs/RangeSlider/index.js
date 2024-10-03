@@ -1,13 +1,10 @@
-import React from 'react';
+import React from "react";
 // import "./style/main.scss";
 
 export default class extends React.Component {
+  componentDidMount() {}
 
-    componentDidMount(){
-    }
-
-    render(){ return (
-        <div className="RangeSlider">
-        </div>
-    )}
+  render() {
+    return <div className="RangeSlider"></div>;
+  }
 }
