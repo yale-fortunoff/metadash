@@ -27,12 +27,12 @@ const fieldMappings = {
   programs: "Programs",
   has(obj) {
     return Object.keys(this).some(
-      (key) => Object.keys(obj).indexOf(key) !== -1
+      (key) => Object.keys(obj).indexOf(key) !== -1,
     );
   },
   recordsToBeConverted(obj) {
     return Object.keys(this).filter(
-      (key) => Object.keys(obj).indexOf(key) !== -1
+      (key) => Object.keys(obj).indexOf(key) !== -1,
     );
   },
 };
@@ -78,7 +78,7 @@ async function downloadAllTables() {
            ***********************************************************************/
           record[key] = record[key].map((id) => {
             return [...tables[fieldMappings[key]].records].find(
-              (r) => r.id === id
+              (r) => r.id === id,
             ).fields.uri;
           });
         });
@@ -97,7 +97,7 @@ async function downloadAllTables() {
         record.birth_place_cities = record.birth_place_cities || [null];
         record.birth_place_countries = record.birth_place_countries || [null];
         record.birth_years = record.birth_years
-          ? record.birth_years.map((year) => (+year).toFixed(1))
+          ? record.birth_years.map((year) => (+year).toFixed(0))
           : [];
         record.subject_refs = record.subject_refs || [];
         record.programs = record.programs || [];
@@ -114,7 +114,7 @@ async function downloadAllTables() {
     fs.ensureDirSync(path.resolve(__dirname, `./src/Data/json/from_airtable`));
     fs.writeFileSync(
       path.resolve(__dirname, `./src/Data/json/${tableName}.json`),
-      JSON.stringify(table.jsonRecords, null, 2)
+      JSON.stringify(table.jsonRecords, null, 2),
     );
   }
 }
