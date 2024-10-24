@@ -1,3 +1,7 @@
+# METADASH Archive
+
+This project was rebuilt with T3 and is therefore obsolete. Go to fortunoff/metadash for the new version.
+
 # Fortunoff Metadash
 
 This dashboard visualizes metadata from more than 4,000 testimonies in the
