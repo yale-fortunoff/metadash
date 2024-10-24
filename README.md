@@ -1,6 +1,6 @@
 # METADASH Archive
 
-This project was rebuilt with T3 and is therefore obsolete. Go to fortunoff/metadash for the new version.
+This project was rebuilt with T3 and is therefore obsolete. Go to [yale-fortunoff/metadash](https://github.com/yale-fortunoff/metadash-staging) for the new version.
 
 # Fortunoff Metadash
 
